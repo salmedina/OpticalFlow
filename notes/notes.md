@@ -1,11 +1,11 @@
-#Dense Optical Flow
+# Dense Optical Flow
 
 Sample VIRAT video:
 ```
 /home/zal/Data/VIRAT/Frames/imgs/VIRAT_S_040100_08_001103_001181
 ```
 
-### Techiniques
+### Techniques
 
 1. Optical Flow [paper](http://ivizlab.sfu.ca/arya/Papers/ACM/Computation%20of%20Optical%20Flow.pdf)
 1. Dense Optical Flow [paper](http://www.diva-portal.org/smash/get/diva2:273847/FULLTEXT01.pdf)
