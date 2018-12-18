@@ -15,3 +15,21 @@ Sample VIRAT video:
 1. LiteFlowNet [[paper]](https://arxiv.org/pdf/1805.07036.pdf)
 1. PWC-Net (Pyramid, Warping, and Cost Volume) [[paper]](http://openaccess.thecvf.com/content_cvpr_2018/papers/Sun_PWC-Net_CNNs_for_CVPR_2018_paper.pdf)
 1. GeoNet [[paper]](http://openaccess.thecvf.com/content_cvpr_2018/CameraReady/2819.pdf)
+1. Occlusions, Motion and Depth Boundaries with
+   a Generic Network for Disparity, Optical Flow
+   or Scene Flow Estimation [[paper]](https://lmb.informatik.uni-freiburg.de/Publications/2018/ISKB18/paper-FlowDispOccBoundary.pdf)
+
+
+
+### FlowNet 2.0
+
+- CVPR 2017
+- Composed by various FlowNets
+- 
+
+
+
+### FlowNet-CSS
+
+- ECCV 2018
+- 
