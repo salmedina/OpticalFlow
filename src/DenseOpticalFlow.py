@@ -55,7 +55,7 @@ if __name__ == '__main__':
             img1,
             img2,
             None,
-            0.5, 3, 15, 3, 5, 1.2, 1)
+            0.5, 3, 58, 3, 5, 1.2, 1)
         # map optical flow back
         #flow = flow / fxy
         # normalization
