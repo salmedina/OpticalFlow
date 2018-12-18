@@ -41,6 +41,7 @@ if __name__ == '__main__':
     sys.stdout.flush()
     tic = time.time()
     img2 = cvReadGrayImg(images[0])
+    flow_mag_list = []
     for ind, img_path in enumerate(images[:-1]):
         img1 = img2
         img2 = cvReadGrayImg(images[ind+1])
@@ -48,15 +49,15 @@ if __name__ == '__main__':
         # fxy = norm_width / w
         fxy = 1.
         # normalize image size
-        resized_img1 = cv2.resize(img1, None, fx=fxy, fy=fxy, interpolation = cv2.INTER_AREA)
-        resized_img2 = cv2.resize(img2, None, fx=fxy, fy=fxy, interpolation = cv2.INTER_AREA)
+        # resized_img1 = cv2.resize(img1, None, fx=fxy, fy=fxy, interpolation = cv2.INTER_AREA)
+        # resized_img2 = cv2.resize(img2, None, fx=fxy, fy=fxy, interpolation = cv2.INTER_AREA)
         flow = cv2.calcOpticalFlowFarneback(
             img1,
             img2,
             None,
             0.5, 3, 15, 3, 5, 1.2, 1)
         # map optical flow back
-        flow = flow / fxy
+        #flow = flow / fxy
         # normalization
         flow = np.round((flow + bound) / (2. * bound) * 255.)
         flow[flow < 0] = 0
@@ -82,8 +83,10 @@ if __name__ == '__main__':
         hsv[...,2] = cv2.normalize(mag, None, 0, 255, cv2.NORM_MINMAX)
         bgr = cv2.cvtColor(hsv,cv2.COLOR_HSV2BGR)
         cv2.imwrite(os.path.join(args.hsv_dir, os.path.basename(img_path)), bgr)
+        print('{}/{}'.format(ind, len(images)), np.mean(mag), np.std(mag))
+        flow_mag_list.append(mag)
 
-
+    print(flow_mag_list)
     # duplicate last frame
     basename = os.path.splitext(os.path.basename(images[-1]))[0]
     saveOptFlowToImage(flow, os.path.join(args.save_dir, basename), args.merge)
