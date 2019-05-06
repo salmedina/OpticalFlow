@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 
 def cvReadImg(img_path):
-    return cv2.imread(img_path)
+    return cv2.imread(img_path).astype(np.float32)
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
